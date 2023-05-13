@@ -34,7 +34,7 @@
 , gdk-pixbuf
 , soundtouch
 , miniupnpc
-, mbedtls
+, mbedtls_2
 , curl
 , lzo
 , sfml
@@ -78,8 +78,6 @@ stdenv.mkDerivation rec {
     rev = "v${version}";
     sha256 = "sha256-KEUi9KakvqT/bGLdvzwhzRYqpfk31Un4AJEkB3AX4kw=";
   };
-
-  patches = [ ./includes.patch ];
 
   outputs = [ "out" ];
   makeFlags = [ "VERSION=us" "-s" "VERBOSE=1" ];
