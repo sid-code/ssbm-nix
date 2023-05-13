@@ -112,7 +112,6 @@ in stdenv.mkDerivation rec {
     libpulseaudio
     udev
     gnumake
-    wxGTK30
     gtk2
     gtk3
     gdk-pixbuf
