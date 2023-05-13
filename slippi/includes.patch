@@ -912,3 +912,29 @@ index fe0a3509f..de6e1f6e2 100644
  #else
  #include MBEDTLS_CONFIG_FILE
  #endif
+diff --git a/Source/Core/Core/IPC_HLE/WII_IPC_HLE_Device_net_ssl.h b/Source/Core/Core/IPC_HLE/WII_IPC_HLE_Device_net_ssl.h
+index 0a1912a5e..a8e7e0590 100644
+--- a/Source/Core/Core/IPC_HLE/WII_IPC_HLE_Device_net_ssl.h
++++ b/Source/Core/Core/IPC_HLE/WII_IPC_HLE_Device_net_ssl.h
+@@ -9,7 +9,7 @@
+ 
+ #include <mbedtls/ctr_drbg.h>
+ #include <mbedtls/entropy.h>
+-#include <mbedtls/net.h>
++#include <mbedtls/net_socket.h>
+ #include <mbedtls/pk.h>
+ #include <mbedtls/platform.h>
+ #include <mbedtls/ssl.h>
+diff --git a/Source/Core/Core/Movie.cpp b/Source/Core/Core/Movie.cpp
+index 12849c184..de35902d1 100644
+--- a/Source/Core/Core/Movie.cpp
++++ b/Source/Core/Core/Movie.cpp
+@@ -6,7 +6,7 @@
+ #include <array>
+ #include <cctype>
+ #include <iterator>
+-#include <mbedtls/config.h>
++#include <mbedtls/build_info.h>
+ #include <mbedtls/md.h>
+ #include <mutex>
+ #include <thread>
