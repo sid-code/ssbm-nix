@@ -1,5 +1,5 @@
 diff --git a/Externals/curl/lib/vtls/mbedtls.c b/Externals/curl/lib/vtls/mbedtls.c
-index ef0b9492a..832811e66 100644
+index ef0b9492a..834936bcd 100644
 --- a/Externals/curl/lib/vtls/mbedtls.c
 +++ b/Externals/curl/lib/vtls/mbedtls.c
 @@ -31,7 +31,7 @@
@@ -7,7 +7,7 @@ index ef0b9492a..832811e66 100644
  #ifdef USE_MBEDTLS
  
 -#include <mbedtls/net.h>
-+#include <mbedtls/net_socket.h>
++#include <mbedtls/net_sockets.h>
  #include <mbedtls/ssl.h>
  #include <mbedtls/certs.h>
  #include <mbedtls/x509.h>
@@ -311,7 +311,7 @@ index 25a27bef3..c3c57b84b 100644
  #include MBEDTLS_CONFIG_FILE
  #endif
 diff --git a/Externals/mbedtls/library/error.c b/Externals/mbedtls/library/error.c
-index a1cf83aed..c1eb39703 100644
+index a1cf83aed..e9a14dde9 100644
 --- a/Externals/mbedtls/library/error.c
 +++ b/Externals/mbedtls/library/error.c
 @@ -20,7 +20,7 @@
@@ -328,7 +328,7 @@ index a1cf83aed..c1eb39703 100644
  
  #if defined(MBEDTLS_NET_C)
 -#include "mbedtls/net.h"
-+#include "mbedtls/net_socket.h"
++#include "mbedtls/net_sockets.h"
  #endif
  
  #if defined(MBEDTLS_OID_C)
@@ -450,7 +450,7 @@ index b2c775a3d..23bbf6aed 100644
  #include MBEDTLS_CONFIG_FILE
  #endif
 diff --git a/Externals/mbedtls/library/net.c b/Externals/mbedtls/library/net.c
-index b5d06888b..93226521e 100644
+index b5d06888b..1e5812122 100644
 --- a/Externals/mbedtls/library/net.c
 +++ b/Externals/mbedtls/library/net.c
 @@ -20,14 +20,14 @@
@@ -466,7 +466,7 @@ index b5d06888b..93226521e 100644
  #if defined(MBEDTLS_NET_C)
  
 -#include "mbedtls/net.h"
-+#include "mbedtls/net_socket.h"
++#include "mbedtls/net_sockets.h"
  
  #include <string.h>
  
@@ -913,7 +913,7 @@ index fe0a3509f..de6e1f6e2 100644
  #include MBEDTLS_CONFIG_FILE
  #endif
 diff --git a/Source/Core/Core/IPC_HLE/WII_IPC_HLE_Device_net_ssl.h b/Source/Core/Core/IPC_HLE/WII_IPC_HLE_Device_net_ssl.h
-index 0a1912a5e..a8e7e0590 100644
+index 0a1912a5e..cec9a74ce 100644
 --- a/Source/Core/Core/IPC_HLE/WII_IPC_HLE_Device_net_ssl.h
 +++ b/Source/Core/Core/IPC_HLE/WII_IPC_HLE_Device_net_ssl.h
 @@ -9,7 +9,7 @@
@@ -921,7 +921,7 @@ index 0a1912a5e..a8e7e0590 100644
  #include <mbedtls/ctr_drbg.h>
  #include <mbedtls/entropy.h>
 -#include <mbedtls/net.h>
-+#include <mbedtls/net_socket.h>
++#include <mbedtls/net_sockets.h>
  #include <mbedtls/pk.h>
  #include <mbedtls/platform.h>
  #include <mbedtls/ssl.h>
