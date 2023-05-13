@@ -1,5 +1,3 @@
-![](https://img.shields.io/github/workflow/status/6AA4FD/ssbm-nix/builds)
-
 # ssbm-nix
 Nix expressions for Super Smash Bros. Melee players.
 
