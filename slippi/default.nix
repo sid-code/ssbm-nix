@@ -79,7 +79,7 @@ stdenv.mkDerivation rec {
     sha256 = "sha256-KEUi9KakvqT/bGLdvzwhzRYqpfk31Un4AJEkB3AX4kw=";
   };
 
-  patches = [ ./net_socket.patch ];
+  patches = [ ./includes.patch ];
 
   outputs = [ "out" ];
   makeFlags = [ "VERSION=us" "-s" "VERBOSE=1" ];

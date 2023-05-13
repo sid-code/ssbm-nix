@@ -1,0 +1,914 @@
+diff --git a/Externals/curl/lib/vtls/mbedtls.c b/Externals/curl/lib/vtls/mbedtls.c
+index ef0b9492a..832811e66 100644
+--- a/Externals/curl/lib/vtls/mbedtls.c
++++ b/Externals/curl/lib/vtls/mbedtls.c
+@@ -31,7 +31,7 @@
+ 
+ #ifdef USE_MBEDTLS
+ 
+-#include <mbedtls/net.h>
++#include <mbedtls/net_socket.h>
+ #include <mbedtls/ssl.h>
+ #include <mbedtls/certs.h>
+ #include <mbedtls/x509.h>
+diff --git a/Externals/mbedtls/library/aes.c b/Externals/mbedtls/library/aes.c
+index ec9313de3..a6931321f 100644
+--- a/Externals/mbedtls/library/aes.c
++++ b/Externals/mbedtls/library/aes.c
+@@ -26,7 +26,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/aesni.c b/Externals/mbedtls/library/aesni.c
+index 83a5868bd..2baf3b36d 100644
+--- a/Externals/mbedtls/library/aesni.c
++++ b/Externals/mbedtls/library/aesni.c
+@@ -25,7 +25,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/arc4.c b/Externals/mbedtls/library/arc4.c
+index ff0e993e7..29e9a47a6 100644
+--- a/Externals/mbedtls/library/arc4.c
++++ b/Externals/mbedtls/library/arc4.c
+@@ -25,7 +25,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/asn1parse.c b/Externals/mbedtls/library/asn1parse.c
+index b37523def..edb7d9e9c 100644
+--- a/Externals/mbedtls/library/asn1parse.c
++++ b/Externals/mbedtls/library/asn1parse.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/asn1write.c b/Externals/mbedtls/library/asn1write.c
+index dd5a7455e..185a3ad63 100644
+--- a/Externals/mbedtls/library/asn1write.c
++++ b/Externals/mbedtls/library/asn1write.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/base64.c b/Externals/mbedtls/library/base64.c
+index 16c254da9..c66e29b80 100644
+--- a/Externals/mbedtls/library/base64.c
++++ b/Externals/mbedtls/library/base64.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/bignum.c b/Externals/mbedtls/library/bignum.c
+index 15cbf73fb..662ba154f 100644
+--- a/Externals/mbedtls/library/bignum.c
++++ b/Externals/mbedtls/library/bignum.c
+@@ -27,7 +27,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/blowfish.c b/Externals/mbedtls/library/blowfish.c
+index 89be4d122..45757c5b9 100644
+--- a/Externals/mbedtls/library/blowfish.c
++++ b/Externals/mbedtls/library/blowfish.c
+@@ -26,7 +26,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/camellia.c b/Externals/mbedtls/library/camellia.c
+index e015ca24b..04816a4f3 100644
+--- a/Externals/mbedtls/library/camellia.c
++++ b/Externals/mbedtls/library/camellia.c
+@@ -26,7 +26,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/ccm.c b/Externals/mbedtls/library/ccm.c
+index 3463a0b32..e809d0136 100644
+--- a/Externals/mbedtls/library/ccm.c
++++ b/Externals/mbedtls/library/ccm.c
+@@ -29,7 +29,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/certs.c b/Externals/mbedtls/library/certs.c
+index ffe6bc981..6bfd474ee 100644
+--- a/Externals/mbedtls/library/certs.c
++++ b/Externals/mbedtls/library/certs.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/cipher.c b/Externals/mbedtls/library/cipher.c
+index ccc068503..f7f23af10 100644
+--- a/Externals/mbedtls/library/cipher.c
++++ b/Externals/mbedtls/library/cipher.c
+@@ -24,7 +24,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/cipher_wrap.c b/Externals/mbedtls/library/cipher_wrap.c
+index dc76af8ff..7c90c9f91 100644
+--- a/Externals/mbedtls/library/cipher_wrap.c
++++ b/Externals/mbedtls/library/cipher_wrap.c
+@@ -24,7 +24,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/ctr_drbg.c b/Externals/mbedtls/library/ctr_drbg.c
+index aefddfa1d..7d34cde30 100644
+--- a/Externals/mbedtls/library/ctr_drbg.c
++++ b/Externals/mbedtls/library/ctr_drbg.c
+@@ -25,7 +25,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/debug.c b/Externals/mbedtls/library/debug.c
+index 070f63a72..34a45792c 100644
+--- a/Externals/mbedtls/library/debug.c
++++ b/Externals/mbedtls/library/debug.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/des.c b/Externals/mbedtls/library/des.c
+index 61f214af3..7d4f190ad 100644
+--- a/Externals/mbedtls/library/des.c
++++ b/Externals/mbedtls/library/des.c
+@@ -26,7 +26,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/dhm.c b/Externals/mbedtls/library/dhm.c
+index 0f4d31643..eb4a6bf66 100644
+--- a/Externals/mbedtls/library/dhm.c
++++ b/Externals/mbedtls/library/dhm.c
+@@ -25,7 +25,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/ecdh.c b/Externals/mbedtls/library/ecdh.c
+index c0a814731..6dbc1c421 100644
+--- a/Externals/mbedtls/library/ecdh.c
++++ b/Externals/mbedtls/library/ecdh.c
+@@ -27,7 +27,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/ecdsa.c b/Externals/mbedtls/library/ecdsa.c
+index 4156f3c3c..feea06f75 100644
+--- a/Externals/mbedtls/library/ecdsa.c
++++ b/Externals/mbedtls/library/ecdsa.c
+@@ -26,7 +26,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/ecp.c b/Externals/mbedtls/library/ecp.c
+index 858540be2..2a05eb157 100644
+--- a/Externals/mbedtls/library/ecp.c
++++ b/Externals/mbedtls/library/ecp.c
+@@ -41,7 +41,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/ecp_curves.c b/Externals/mbedtls/library/ecp_curves.c
+index 68323c582..180dac897 100644
+--- a/Externals/mbedtls/library/ecp_curves.c
++++ b/Externals/mbedtls/library/ecp_curves.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/entropy.c b/Externals/mbedtls/library/entropy.c
+index cdbd35c34..32442ef60 100644
+--- a/Externals/mbedtls/library/entropy.c
++++ b/Externals/mbedtls/library/entropy.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/entropy_poll.c b/Externals/mbedtls/library/entropy_poll.c
+index 25a27bef3..c3c57b84b 100644
+--- a/Externals/mbedtls/library/entropy_poll.c
++++ b/Externals/mbedtls/library/entropy_poll.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/error.c b/Externals/mbedtls/library/error.c
+index a1cf83aed..c1eb39703 100644
+--- a/Externals/mbedtls/library/error.c
++++ b/Externals/mbedtls/library/error.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+@@ -101,7 +101,7 @@
+ #endif
+ 
+ #if defined(MBEDTLS_NET_C)
+-#include "mbedtls/net.h"
++#include "mbedtls/net_socket.h"
+ #endif
+ 
+ #if defined(MBEDTLS_OID_C)
+diff --git a/Externals/mbedtls/library/gcm.c b/Externals/mbedtls/library/gcm.c
+index 4298254d2..c27c509d1 100644
+--- a/Externals/mbedtls/library/gcm.c
++++ b/Externals/mbedtls/library/gcm.c
+@@ -30,7 +30,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/havege.c b/Externals/mbedtls/library/havege.c
+index 7623bc067..918a1ef8e 100644
+--- a/Externals/mbedtls/library/havege.c
++++ b/Externals/mbedtls/library/havege.c
+@@ -27,7 +27,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/hmac_drbg.c b/Externals/mbedtls/library/hmac_drbg.c
+index bf5f9b5bd..768110263 100644
+--- a/Externals/mbedtls/library/hmac_drbg.c
++++ b/Externals/mbedtls/library/hmac_drbg.c
+@@ -26,7 +26,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/md.c b/Externals/mbedtls/library/md.c
+index eda98f636..6197988d8 100644
+--- a/Externals/mbedtls/library/md.c
++++ b/Externals/mbedtls/library/md.c
+@@ -24,7 +24,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/md2.c b/Externals/mbedtls/library/md2.c
+index 897670131..712b83809 100644
+--- a/Externals/mbedtls/library/md2.c
++++ b/Externals/mbedtls/library/md2.c
+@@ -26,7 +26,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/md4.c b/Externals/mbedtls/library/md4.c
+index 11a77e3ae..0b56730ec 100644
+--- a/Externals/mbedtls/library/md4.c
++++ b/Externals/mbedtls/library/md4.c
+@@ -26,7 +26,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/md5.c b/Externals/mbedtls/library/md5.c
+index 5d972dc9d..649b75cc7 100644
+--- a/Externals/mbedtls/library/md5.c
++++ b/Externals/mbedtls/library/md5.c
+@@ -25,7 +25,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/md_wrap.c b/Externals/mbedtls/library/md_wrap.c
+index 2cfcae200..9ce53c449 100644
+--- a/Externals/mbedtls/library/md_wrap.c
++++ b/Externals/mbedtls/library/md_wrap.c
+@@ -24,7 +24,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/memory_buffer_alloc.c b/Externals/mbedtls/library/memory_buffer_alloc.c
+index b2c775a3d..23bbf6aed 100644
+--- a/Externals/mbedtls/library/memory_buffer_alloc.c
++++ b/Externals/mbedtls/library/memory_buffer_alloc.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/net.c b/Externals/mbedtls/library/net.c
+index b5d06888b..93226521e 100644
+--- a/Externals/mbedtls/library/net.c
++++ b/Externals/mbedtls/library/net.c
+@@ -20,14 +20,14 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+ 
+ #if defined(MBEDTLS_NET_C)
+ 
+-#include "mbedtls/net.h"
++#include "mbedtls/net_socket.h"
+ 
+ #include <string.h>
+ 
+diff --git a/Externals/mbedtls/library/oid.c b/Externals/mbedtls/library/oid.c
+index 1bd47d792..66e8a706b 100644
+--- a/Externals/mbedtls/library/oid.c
++++ b/Externals/mbedtls/library/oid.c
+@@ -22,7 +22,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/padlock.c b/Externals/mbedtls/library/padlock.c
+index b85ff9cd2..779add05d 100644
+--- a/Externals/mbedtls/library/padlock.c
++++ b/Externals/mbedtls/library/padlock.c
+@@ -26,7 +26,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/pem.c b/Externals/mbedtls/library/pem.c
+index 541e870c3..1c1b6473f 100644
+--- a/Externals/mbedtls/library/pem.c
++++ b/Externals/mbedtls/library/pem.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/pk.c b/Externals/mbedtls/library/pk.c
+index 10bd0a582..4abff117d 100644
+--- a/Externals/mbedtls/library/pk.c
++++ b/Externals/mbedtls/library/pk.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/pk_wrap.c b/Externals/mbedtls/library/pk_wrap.c
+index 712ad4832..d1a03bb0c 100644
+--- a/Externals/mbedtls/library/pk_wrap.c
++++ b/Externals/mbedtls/library/pk_wrap.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/pkcs12.c b/Externals/mbedtls/library/pkcs12.c
+index f1777eb70..ee5635c15 100644
+--- a/Externals/mbedtls/library/pkcs12.c
++++ b/Externals/mbedtls/library/pkcs12.c
+@@ -26,7 +26,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/pkcs5.c b/Externals/mbedtls/library/pkcs5.c
+index 44af9869b..74461a1fb 100644
+--- a/Externals/mbedtls/library/pkcs5.c
++++ b/Externals/mbedtls/library/pkcs5.c
+@@ -30,7 +30,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/pkparse.c b/Externals/mbedtls/library/pkparse.c
+index bddcf5d3a..407656fa9 100644
+--- a/Externals/mbedtls/library/pkparse.c
++++ b/Externals/mbedtls/library/pkparse.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/pkwrite.c b/Externals/mbedtls/library/pkwrite.c
+index 0a16eac72..9ad36c768 100644
+--- a/Externals/mbedtls/library/pkwrite.c
++++ b/Externals/mbedtls/library/pkwrite.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/platform.c b/Externals/mbedtls/library/platform.c
+index d634c6277..3e040c211 100644
+--- a/Externals/mbedtls/library/platform.c
++++ b/Externals/mbedtls/library/platform.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/ripemd160.c b/Externals/mbedtls/library/ripemd160.c
+index a55cc3eb4..9871d44da 100644
+--- a/Externals/mbedtls/library/ripemd160.c
++++ b/Externals/mbedtls/library/ripemd160.c
+@@ -26,7 +26,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/rsa.c b/Externals/mbedtls/library/rsa.c
+index 3883d0921..04d40ae83 100644
+--- a/Externals/mbedtls/library/rsa.c
++++ b/Externals/mbedtls/library/rsa.c
+@@ -26,7 +26,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/sha1.c b/Externals/mbedtls/library/sha1.c
+index 8c77cbaa8..aeeb4ea61 100644
+--- a/Externals/mbedtls/library/sha1.c
++++ b/Externals/mbedtls/library/sha1.c
+@@ -25,7 +25,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/sha256.c b/Externals/mbedtls/library/sha256.c
+index 4e82c0b79..4c1d849e3 100644
+--- a/Externals/mbedtls/library/sha256.c
++++ b/Externals/mbedtls/library/sha256.c
+@@ -25,7 +25,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/sha512.c b/Externals/mbedtls/library/sha512.c
+index af610bb43..6543f1386 100644
+--- a/Externals/mbedtls/library/sha512.c
++++ b/Externals/mbedtls/library/sha512.c
+@@ -25,7 +25,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/ssl_cache.c b/Externals/mbedtls/library/ssl_cache.c
+index 711bc535c..26a181d1d 100644
+--- a/Externals/mbedtls/library/ssl_cache.c
++++ b/Externals/mbedtls/library/ssl_cache.c
+@@ -24,7 +24,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/ssl_ciphersuites.c b/Externals/mbedtls/library/ssl_ciphersuites.c
+index 8bad7abd7..9372b85b5 100644
+--- a/Externals/mbedtls/library/ssl_ciphersuites.c
++++ b/Externals/mbedtls/library/ssl_ciphersuites.c
+@@ -22,7 +22,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/ssl_cli.c b/Externals/mbedtls/library/ssl_cli.c
+index c82e2e70a..cd8b36a78 100644
+--- a/Externals/mbedtls/library/ssl_cli.c
++++ b/Externals/mbedtls/library/ssl_cli.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/ssl_cookie.c b/Externals/mbedtls/library/ssl_cookie.c
+index 7e0c573ad..57d1b7822 100644
+--- a/Externals/mbedtls/library/ssl_cookie.c
++++ b/Externals/mbedtls/library/ssl_cookie.c
+@@ -24,7 +24,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/ssl_srv.c b/Externals/mbedtls/library/ssl_srv.c
+index b48a609ee..1b620069a 100644
+--- a/Externals/mbedtls/library/ssl_srv.c
++++ b/Externals/mbedtls/library/ssl_srv.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/ssl_ticket.c b/Externals/mbedtls/library/ssl_ticket.c
+index 0e27900b5..7e31763d2 100644
+--- a/Externals/mbedtls/library/ssl_ticket.c
++++ b/Externals/mbedtls/library/ssl_ticket.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/ssl_tls.c b/Externals/mbedtls/library/ssl_tls.c
+index d9b05fd1f..262b0fe25 100644
+--- a/Externals/mbedtls/library/ssl_tls.c
++++ b/Externals/mbedtls/library/ssl_tls.c
+@@ -28,7 +28,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/threading.c b/Externals/mbedtls/library/threading.c
+index 1b6d9cd44..94ff6e88a 100644
+--- a/Externals/mbedtls/library/threading.c
++++ b/Externals/mbedtls/library/threading.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/timing.c b/Externals/mbedtls/library/timing.c
+index 5d8b25b99..c49a9c212 100644
+--- a/Externals/mbedtls/library/timing.c
++++ b/Externals/mbedtls/library/timing.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/version.c b/Externals/mbedtls/library/version.c
+index 6ca80d469..2b4acb7f1 100644
+--- a/Externals/mbedtls/library/version.c
++++ b/Externals/mbedtls/library/version.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/version_features.c b/Externals/mbedtls/library/version_features.c
+index 196b93c88..21789bf33 100644
+--- a/Externals/mbedtls/library/version_features.c
++++ b/Externals/mbedtls/library/version_features.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/x509.c b/Externals/mbedtls/library/x509.c
+index ffc3d6c94..3648e02a8 100644
+--- a/Externals/mbedtls/library/x509.c
++++ b/Externals/mbedtls/library/x509.c
+@@ -30,7 +30,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/x509_create.c b/Externals/mbedtls/library/x509_create.c
+index 3b773c02a..fbae47eba 100644
+--- a/Externals/mbedtls/library/x509_create.c
++++ b/Externals/mbedtls/library/x509_create.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/x509_crl.c b/Externals/mbedtls/library/x509_crl.c
+index 125a77399..5b4b96705 100644
+--- a/Externals/mbedtls/library/x509_crl.c
++++ b/Externals/mbedtls/library/x509_crl.c
+@@ -30,7 +30,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/x509_crt.c b/Externals/mbedtls/library/x509_crt.c
+index f6879ddcf..47713dbf3 100644
+--- a/Externals/mbedtls/library/x509_crt.c
++++ b/Externals/mbedtls/library/x509_crt.c
+@@ -30,7 +30,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/x509_csr.c b/Externals/mbedtls/library/x509_csr.c
+index dbf659b44..71573c3bd 100644
+--- a/Externals/mbedtls/library/x509_csr.c
++++ b/Externals/mbedtls/library/x509_csr.c
+@@ -30,7 +30,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/x509write_crt.c b/Externals/mbedtls/library/x509write_crt.c
+index 9041d440f..014090fc7 100644
+--- a/Externals/mbedtls/library/x509write_crt.c
++++ b/Externals/mbedtls/library/x509write_crt.c
+@@ -26,7 +26,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/x509write_csr.c b/Externals/mbedtls/library/x509write_csr.c
+index 0b9a2851e..6af1172cb 100644
+--- a/Externals/mbedtls/library/x509write_csr.c
++++ b/Externals/mbedtls/library/x509write_csr.c
+@@ -25,7 +25,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
+diff --git a/Externals/mbedtls/library/xtea.c b/Externals/mbedtls/library/xtea.c
+index fe0a3509f..de6e1f6e2 100644
+--- a/Externals/mbedtls/library/xtea.c
++++ b/Externals/mbedtls/library/xtea.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #if !defined(MBEDTLS_CONFIG_FILE)
+-#include "mbedtls/config.h"
++#include "mbedtls/build_info.h"
+ #else
+ #include MBEDTLS_CONFIG_FILE
+ #endif
