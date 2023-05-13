@@ -1,8 +1,49 @@
-{ stdenv, lib, makeDesktopItem, gcc, slippi-desktop, playbackSlippi, fetchFromGitHub, makeWrapper
-, mesa, pkg-config, cmake, bluez, ffmpeg, libao, libGLU
-, gtk2, gtk3, wrapGAppsHook, glib, glib-networking, gettext, xorg, readline, openal, libevdev, portaudio, libusb1
-, libpulseaudio, udev, gnumake, wxGTK30, gdk-pixbuf, soundtouch, miniupnpc
-, mbedtls, curl, lzo, sfml, enet, xdg-utils, hidapi, webkitgtk, vulkan-loader }:
+{ stdenv
+, lib
+, makeDesktopItem
+, gcc
+, slippi-desktop
+, playbackSlippi
+, fetchFromGitHub
+, makeWrapper
+, gnused
+, coreutils
+, findutils
+, mesa
+, pkg-config
+, cmake
+, bluez
+, ffmpeg
+, libao
+, libGLU
+, gtk2
+, gtk3
+, wrapGAppsHook
+, glib
+, glib-networking
+, gettext
+, xorg
+, readline
+, openal
+, libevdev
+, portaudio
+, libusb1
+, libpulseaudio
+, udev
+, gnumake
+, gdk-pixbuf
+, soundtouch
+, miniupnpc
+, mbedtls
+, curl
+, lzo
+, sfml
+, enet
+, xdg-utils
+, hidapi
+, webkitgtk
+, vulkan-loader
+}:
 let
 
   netplay-desktop = makeDesktopItem {
@@ -25,7 +66,8 @@ let
     startupNotify = false;
   };
 
-in stdenv.mkDerivation rec {
+in
+stdenv.mkDerivation rec {
   pname = "slippi-ishiiruka";
   version = "3.0.3";
   name =
@@ -66,23 +108,24 @@ in stdenv.mkDerivation rec {
       mkdir -p $out/bin
     '';
 
-  installPhase = if playbackSlippi then ''
-    wrapProgram "$out/dolphin-emu" \
-      --set "GDK_BACKEND" "x11" \
-      --prefix GIO_EXTRA_MODULES : "${glib-networking}/lib/gio/modules" \
-      --prefix LD_LIBRARY_PATH : "${vulkan-loader}/lib" \
-      --prefix PATH : "${xdg-utils}/bin"
-    ln -s $out/dolphin-emu $out/bin/slippi-playback
-    ln -s ${playback-desktop}/share/applications $out/share
-  '' else ''
-    wrapProgram "$out/dolphin-emu" \
-      --set "GDK_BACKEND" "x11" \
-      --prefix GIO_EXTRA_MODULES : "${glib-networking}/lib/gio/modules" \
-      --prefix LD_LIBRARY_PATH : "${vulkan-loader}/lib" \
-      --prefix PATH : "${xdg-utils}/bin"
-    ln -s $out/dolphin-emu $out/bin/slippi-netplay
-    ln -s ${netplay-desktop}/share/applications $out/share
-  '';
+  installPhase =
+    if playbackSlippi then ''
+      wrapProgram "$out/dolphin-emu" \
+        --set "GDK_BACKEND" "x11" \
+        --prefix GIO_EXTRA_MODULES : "${glib-networking}/lib/gio/modules" \
+        --prefix LD_LIBRARY_PATH : "${vulkan-loader}/lib" \
+        --prefix PATH : "${xdg-utils}/bin"
+      ln -s $out/dolphin-emu $out/bin/slippi-playback
+      ln -s ${playback-desktop}/share/applications $out/share
+    '' else ''
+      wrapProgram "$out/dolphin-emu" \
+        --set "GDK_BACKEND" "x11" \
+        --prefix GIO_EXTRA_MODULES : "${glib-networking}/lib/gio/modules" \
+        --prefix LD_LIBRARY_PATH : "${vulkan-loader}/lib" \
+        --prefix PATH : "${xdg-utils}/bin"
+      ln -s $out/dolphin-emu $out/bin/slippi-netplay
+      ln -s ${netplay-desktop}/share/applications $out/share
+    '';
 
   nativeBuildInputs = [ pkg-config cmake wrapGAppsHook ];
   buildInputs = [
