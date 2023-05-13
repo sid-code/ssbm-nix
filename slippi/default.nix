@@ -158,7 +158,7 @@ stdenv.mkDerivation rec {
     gdk-pixbuf
     soundtouch
     miniupnpc
-    mbedtls
+    mbedtls_2
     curl
     lzo
     sfml
