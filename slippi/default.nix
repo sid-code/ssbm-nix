@@ -69,7 +69,7 @@ let
 in
 stdenv.mkDerivation rec {
   pname = "slippi-ishiiruka";
-  version = "3.0.3";
+  version = "3.0.4";
   name =
     "${pname}-${version}-${if playbackSlippi then "playback" else "netplay"}";
   src = fetchFromGitHub {
