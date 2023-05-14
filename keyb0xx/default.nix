@@ -7,12 +7,10 @@ stdenv.mkDerivation rec {
   pname = "keyb0xx";
   version = "git";
   src = fetchFromGitLab {
-
     owner = "liamjen";
     repo = "keyb0xx";
     rev = "b2e53a2c5bca808c08b235327ffd76494ad23b32";
     sha256 = "bWHddDxUPDMU+Y9c+RYZxCPnPruU1Cx86ASYBVDrulM=";
-
   };
 
   buildInputs = [ libevdev ];
@@ -24,8 +22,9 @@ stdenv.mkDerivation rec {
   '';
 
   installPhase = ''
-    mkdir -p $out
+    mkdir -p $out/bin
     cp -rf * $out/
+    mv $out/keyb0xx $out/bin/keyb0xx
   '';
 
 }
