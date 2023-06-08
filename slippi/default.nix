@@ -98,9 +98,6 @@ stdenv.mkDerivation rec {
 
   postBuild = with lib;
     optionalString playbackSlippi ''
-      rm -rf ../Data/Sys/GameSettings
-      cp -r "${slippi-desktop}/app/dolphin-dev/overwrite/Sys/GameSettings" ../Data/Sys
-    '' + ''
       cp -r -n ../Data/Sys/ Binaries/
       cp -r Binaries/ $out
       mkdir -p $out/bin
