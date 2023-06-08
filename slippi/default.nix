@@ -76,7 +76,7 @@ stdenv.mkDerivation rec {
     owner = "project-slippi";
     repo = "Ishiiruka";
     rev = "v${version}";
-    sha256 = "sha256-8zORxpbeRtn7Xrb2NwYTuSsw3m9CWe1v0LBT4Du29F4=";
+    sha256 = "sha256-VE9cHETk0fVEuHTAyetB26cP6+lRrImr+ZpRTD73zTE=";
   };
 
   outputs = [ "out" ];
