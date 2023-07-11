@@ -1,4 +1,7 @@
-{ stdenv, fetchzip }:
+{
+  stdenv,
+  fetchzip,
+}:
 stdenv.mkDerivation {
   name = "pplus-sdcard";
   version = "2.15";
@@ -17,5 +20,4 @@ stdenv.mkDerivation {
     mkdir -p $out
     cp sd.raw $out
   '';
-
 }

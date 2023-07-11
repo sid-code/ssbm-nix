@@ -1,7 +1,11 @@
-{ lib, stdenv, fetchFromGitLab, libevdev, keyb0xxconfig ? builtins.readFile ./config.h }:
-
+{
+  lib,
+  stdenv,
+  fetchFromGitLab,
+  libevdev,
+  keyb0xxconfig ? builtins.readFile ./config.h,
+}:
 stdenv.mkDerivation rec {
-
   config_h = builtins.toFile "config.h" keyb0xxconfig;
 
   pname = "keyb0xx";
@@ -13,9 +17,9 @@ stdenv.mkDerivation rec {
     sha256 = "bWHddDxUPDMU+Y9c+RYZxCPnPruU1Cx86ASYBVDrulM=";
   };
 
-  buildInputs = [ libevdev ];
+  buildInputs = [libevdev];
 
-  NIX_CFLAGS_COMPILE = [ "-I${libevdev}/include/libevdev-1.0" ];
+  NIX_CFLAGS_COMPILE = ["-I${libevdev}/include/libevdev-1.0"];
 
   patchPhase = ''
     cp $config_h config.h
@@ -26,5 +30,4 @@ stdenv.mkDerivation rec {
     cp -rf * $out/
     mv $out/keyb0xx $out/bin/keyb0xx
   '';
-
 }
